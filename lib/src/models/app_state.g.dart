@@ -21,10 +21,7 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
     Object? value;
     value = object.location;
     if (value != null) {
-      result
-        ..add('location')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(Location)));
+      result..add('location')..add(serializers.serialize(value, specifiedType: const FullType(Location)));
     }
     return result;
   }
@@ -41,8 +38,7 @@ class _$AppStateSerializer implements StructuredSerializer<AppState> {
       final Object? value = iterator.current;
       switch (key) {
         case 'location':
-          result.location.replace(serializers.deserialize(value,
-              specifiedType: const FullType(Location))! as Location);
+          result.location.replace(serializers.deserialize(value, specifiedType: const FullType(Location))! as Location);
           break;
       }
     }
@@ -55,14 +51,12 @@ class _$AppState extends AppState {
   @override
   final Location? location;
 
-  factory _$AppState([void Function(AppStateBuilder)? updates]) =>
-      (new AppStateBuilder()..update(updates)).build();
+  factory _$AppState([void Function(AppStateBuilder)? updates]) => (new AppStateBuilder()..update(updates)).build();
 
   _$AppState._({this.location}) : super._();
 
   @override
-  AppState rebuild(void Function(AppStateBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
+  AppState rebuild(void Function(AppStateBuilder) updates) => (toBuilder()..update(updates)).build();
 
   @override
   AppStateBuilder toBuilder() => new AppStateBuilder()..replace(this);
@@ -80,8 +74,7 @@ class _$AppState extends AppState {
 
   @override
   String toString() {
-    return (newBuiltValueToStringHelper('AppState')..add('location', location))
-        .toString();
+    return (newBuiltValueToStringHelper('AppState')..add('location', location)).toString();
   }
 }
 
@@ -125,8 +118,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
         _$failedField = 'location';
         _location?.build();
       } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            'AppState', _$failedField, e.toString());
+        throw new BuiltValueNestedFieldError('AppState', _$failedField, e.toString());
       }
       rethrow;
     }
